@@ -8,19 +8,19 @@ import { toast } from "react-toastify";
 
 
 
-const ProductContext = createContext();
+// const ProductContext = createContext();
 
-const url ="https://fakestoreapi.com/products"
+// const url ="https://fakestoreapi.com/products"
 
-const getlocalstoragedata=()=>{
-  const getdata=localStorage.getItem("StyleSpotcart");
+// const getlocalstoragedata=()=>{
+//   const getdata=localStorage.getItem("StyleSpotcart");
   
-   if(getdata.length===0){
-    return []
-   }else{
-    return JSON.parse(getdata);
-   }
-}
+//    if(getdata.length===0){
+//     return []
+//    }else{
+//     return JSON.parse(getdata);
+//    }
+// }
 
 const initialState={
    isloading:false,
@@ -29,7 +29,7 @@ const initialState={
     menproduct:[],
     womenproduct:[],
     singleproduct:{},
-    cartproduct:getlocalstoragedata(),
+    cartproduct:[],
     filter:{
       text:""
     },
@@ -119,7 +119,7 @@ const ProductProvider = ({ children }) => {
 
    useEffect(()=>{
       dispatch({type:"TOTAL_CART_VALUE"})
-      localStorage.setItem("StyleSpotcart",JSON.stringify(state.cartproduct))
+      // localStorage.setItem("StyleSpotcart",JSON.stringify(state.cartproduct))
    },[state.cartproduct])
 
 
